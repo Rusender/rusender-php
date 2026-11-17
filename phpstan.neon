@@ -1,0 +1,8 @@
+# The SDK and the examples at the max level. Tests walk the JSON of the spec, which is mixed by nature: phpstan.tests.neon checks
+# them at level 6.
+parameters:
+    level: max
+    paths:
+        - src
+        - examples
+    tmpDir: .phpstan.cache

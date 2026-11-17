@@ -1,0 +1,57 @@
+{
+    "name": "rusender/rusender-php",
+    "description": "Official PHP SDK for the RuSender public API",
+    "type": "library",
+    "keywords": [
+        "rusender",
+        "email",
+        "transactional",
+        "api",
+        "sdk"
+    ],
+    "homepage": "https://github.com/rusender/rusender-php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "RuSender"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^7.8.2 || ^8.0",
+        "guzzlehttp/psr7": "^2.6.3 || ^3.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.64",
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^10.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "RuSender\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "RuSender\\Tests\\": "tests/",
+            "RuSender\\Scripts\\": "scripts/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "platform": {
+            "php": "8.1.0"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "analyse": [
+            "phpstan analyse --memory-limit=1G",
+            "phpstan analyse --memory-limit=1G -c phpstan.tests.neon"
+        ],
+        "cs": "php-cs-fixer fix --dry-run --diff",
+        "cs:fix": "php-cs-fixer fix"
+    },
+    "minimum-stability": "stable"
+}
